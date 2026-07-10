@@ -91,6 +91,8 @@ void CamHelperImx520::prepare(libcamera::Span<const uint8_t> buffer, Metadata &m
 	MdParser::RegisterMap registers;
 	DeviceStatus deviceStatus;
 
+	(void)buffer;
+
 	if (metadata.get("device.status", deviceStatus)) {
 		LOG(IPARPI, Error) << "DeviceStatus not found from DelayedControls";
 		return;
